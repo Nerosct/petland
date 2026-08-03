@@ -39,14 +39,14 @@ public class ProdutoServicoService {
 
     public Integer create(ProdutoServicoRequest request) {
 
-        CadastroEntity cliente = cadastroRepository.findById(request.getCliente())
+        CadastroEntity cliente = cadastroRepository.findById(request.getClienteId())
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
         ProdutoServico produto = new ProdutoServico();
         produto.setNome(request.getNome());
         produto.setValor(request.getValor());
         produto.setServico(request.isServico());
-        produto.setCliente(cliente);
+        produto.setClienteId(cliente.getId());
 
         return produtoRepository.save(produto).getId();
     }
@@ -56,13 +56,13 @@ public class ProdutoServicoService {
         ProdutoServico produto = produtoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
 
-        CadastroEntity cliente = cadastroRepository.findById(request.getCliente())
+        CadastroEntity cliente = cadastroRepository.findById(request.getClienteId())
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
         produto.setNome(request.getNome());
         produto.setValor(request.getValor());
         produto.setServico(request.isServico());
-        produto.setCliente(cliente);
+        produto.setClienteId(cliente.getId());
 
         return toResponse(produtoRepository.save(produto));
     }
@@ -83,7 +83,7 @@ public class ProdutoServicoService {
         response.setNome(produto.getNome());
         response.setValor(produto.getValor());
         response.setServico(produto.isServico());
-        response.setCliente(produto.getCliente().getId());
+        response.setClienteId(produto.getClienteId());
 
         return response;
     }

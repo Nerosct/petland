@@ -28,6 +28,6 @@ public class ProdutoServico {
     private Double valor;
     private boolean servico;
 
-    @ManyToOne
-    private CadastroEntity cliente;
+    @Column(name = "cliente_id")
+    private Integer clienteId;
 }

@@ -7,5 +7,5 @@ public class ProdutoServicoRequest {
     private String nome;
     private Double valor;
     private boolean servico;
-    private Integer cliente;
+    private Integer clienteId;
 }
