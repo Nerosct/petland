@@ -1,0 +1,10 @@
+spring.application.name=petland
+spring.jpa.show-sql=true
+
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/petland_db
+spring.datasource.username=senha
+spring.datasource.password=senha
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.jpa.hibernate.ddl-auto=update
