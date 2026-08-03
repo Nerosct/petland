@@ -64,6 +64,7 @@ public class AnimalService {
         e.setNome(request.getNome());
         e.setEspecie(request.getEspecie());
         e.setAniversario(request.getAniversario());
+        e.setTutorId(request.getTutorId());
 
         animalRepository.save(e);
         AnimalResponse response = new AnimalResponse();

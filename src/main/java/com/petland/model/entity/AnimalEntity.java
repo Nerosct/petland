@@ -34,8 +34,6 @@ public class AnimalEntity {
     @Enumerated(EnumType.STRING)
     private AnimalEspecie especie;
 
-    @ManyToOne
-    private CadastroEntity tutor;
-
-
+    @Column(name = "tutor_id")
+    private Integer tutorId;
 }
