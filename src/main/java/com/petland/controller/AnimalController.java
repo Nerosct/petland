@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.petland.model.dto.AnimalRequest;
 import com.petland.model.dto.AnimalResponse;
-import com.petland.model.entity.AnimalEntity;
 import com.petland.service.AnimalService;
 
 @RestController
