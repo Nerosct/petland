@@ -1,16 +1,16 @@
-package com.petland.service;
+package com.petland.cadastros.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.petland.model.ProdutoServico;
-import com.petland.model.dto.ProdutoServicoRequest;
-import com.petland.model.dto.ProdutoServicoResponse;
-import com.petland.model.entity.CadastroEntity;
-import com.petland.repository.CadastroRepository;
-import com.petland.repository.ProdutoServicoRepository;
+import com.petland.cadastros.model.ProdutoServico;
+import com.petland.cadastros.model.dto.ProdutoServicoRequest;
+import com.petland.cadastros.model.dto.ProdutoServicoResponse;
+import com.petland.cadastros.model.entity.CadastroEntity;
+import com.petland.cadastros.repository.CadastroRepository;
+import com.petland.cadastros.repository.ProdutoServicoRepository;
 
 @Service
 public class ProdutoServicoService {

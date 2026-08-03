@@ -1,4 +1,4 @@
-package com.petland.controller;
+package com.petland.cadastros.controller;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.petland.model.dto.ClientRequest;
-import com.petland.model.dto.ClientResponse;
-import com.petland.service.ClientService;
+import com.petland.cadastros.model.dto.ClientRequest;
+import com.petland.cadastros.model.dto.ClientResponse;
+import com.petland.cadastros.service.ClientService;
 
 @RestController
 @RequestMapping("/api/clients")

@@ -1,4 +1,4 @@
-package com.petland.controller;
+package com.petland.cadastros.controller;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.petland.model.dto.AnimalRequest;
-import com.petland.model.dto.AnimalResponse;
-import com.petland.service.AnimalService;
+import com.petland.cadastros.model.dto.AnimalRequest;
+import com.petland.cadastros.model.dto.AnimalResponse;
+import com.petland.cadastros.service.AnimalService;
 
 @RestController
 @RequestMapping("/api/animals")

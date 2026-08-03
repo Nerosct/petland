@@ -1,4 +1,4 @@
-package com.petland.service;
+package com.petland.cadastros.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.petland.model.dto.ClientRequest;
-import com.petland.model.dto.ClientResponse;
-import com.petland.model.entity.CadastroEntity;
-import com.petland.repository.CadastroRepository;
+import com.petland.cadastros.model.dto.ClientRequest;
+import com.petland.cadastros.model.dto.ClientResponse;
+import com.petland.cadastros.model.entity.CadastroEntity;
+import com.petland.cadastros.repository.CadastroRepository;
 
 @Service
 public class ClientService {

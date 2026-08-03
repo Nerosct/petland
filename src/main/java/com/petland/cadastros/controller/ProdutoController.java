@@ -1,13 +1,13 @@
-package com.petland.controller;
+package com.petland.cadastros.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.petland.model.dto.ProdutoServicoRequest;
-import com.petland.model.dto.ProdutoServicoResponse;
-import com.petland.service.ProdutoServicoService;
+import com.petland.cadastros.model.dto.ProdutoServicoRequest;
+import com.petland.cadastros.model.dto.ProdutoServicoResponse;
+import com.petland.cadastros.service.ProdutoServicoService;
 
 @RestController
 @RequestMapping("/api/produto")
