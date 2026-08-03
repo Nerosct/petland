@@ -11,6 +11,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -32,6 +33,9 @@ public class AnimalEntity {
 
     @Enumerated(EnumType.STRING)
     private AnimalEspecie especie;
+
+    @ManyToOne
+    private CadastroEntity tutor;
 
 
 }

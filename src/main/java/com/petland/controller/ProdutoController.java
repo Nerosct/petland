@@ -3,80 +3,44 @@ package com.petland.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.petland.model.ProdutoServico;
-import com.petland.repository.ProdutoServicoRepository;
+import com.petland.model.dto.ProdutoServicoRequest;
+import com.petland.model.dto.ProdutoServicoResponse;
+import com.petland.service.ProdutoServicoService;
 
 @RestController
 @RequestMapping("/api/produto")
 public class ProdutoController {
 
     @Autowired
-    private ProdutoServicoRepository produtoServicoRepository;
+    private ProdutoServicoService produtoServicoService;
 
-    @GetMapping()
-    public List<ProdutoServico> listAll() {
-        try {
-            var list = produtoServicoRepository.findAll();
-            System.out.println("Produtos retornados com sucesso");
-            return list;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-
-    @PostMapping()
-    public ProdutoServico save(@RequestBody ProdutoServico produto) {
-        try {
-            var success = produtoServicoRepository.save(produto);
-            return success;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
+    @GetMapping
+    public List<ProdutoServicoResponse> listAll() {
+        return produtoServicoService.listAll();
     }
 
     @GetMapping("/{id}")
-    public ProdutoServico findById(@PathVariable("id") Integer id) {
-        try {
-            var produto = produtoServicoRepository.findById(id);
-            System.out.println("Produto retornado com sucesso");
-            return produto.get();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
+    public ProdutoServicoResponse findById(@PathVariable Integer id) {
+        return produtoServicoService.findById(id);
+    }
+
+    @PostMapping
+    public Integer create(@RequestBody ProdutoServicoRequest request) {
+        return produtoServicoService.create(request);
     }
 
     @PutMapping("/{id}")
-    public ProdutoServico update(@PathVariable("id") Integer id, @RequestBody ProdutoServico produto) {
-        try {
-            var success = produtoServicoRepository.save(produto);
-            return success;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
+    public ProdutoServicoResponse update(
+            @PathVariable Integer id,
+            @RequestBody ProdutoServicoRequest request) {
 
+        return produtoServicoService.update(id, request);
+    }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id){
-        try {
-            produtoServicoRepository.deleteById(id);
-            System.out.println("Produto deletado com sucesso");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+    public void delete(@PathVariable Integer id) {
+        produtoServicoService.delete(id);
     }
-
 }

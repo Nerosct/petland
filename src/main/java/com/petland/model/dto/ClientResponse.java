@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Data;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AnimalResponse extends AnimalRequest {
+@Builder
+public class ClientResponse extends ClientRequest {
     private Integer id;
 }
